@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+   <title>Welocome to Register Page</title>
+{% endblock title %}
+   <title>Welocome to Register page</title>
+
+{% block content %}
+    <div class="container mt-5">
+    <form method="POST" action="{% url 'register'%}">
+        {% csrf_token %}
+        {% if form.errors %}
+            <p>Your Form has Errors..<p>
+        {% endif %}
+        {{form.as_p}}
+        <input type="submit" value="register" class="btn btn-secondary">
+        </form>
+    </div>
+{% endblock content %}

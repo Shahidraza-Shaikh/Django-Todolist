@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+   <title>Welocome to About Us Page</title>
+{% endblock title %}
+   <title>Welocome to About Us page</title>
+
+{% block content %}
+    <div class="container">
+         {% if cont %}
+            {% for i in context %}
+                <p>{{i}}</p>
+            {% endfor %}
+        {% else %}
+            <p>Something Wrong</p>
+        {% endif %}
+        
+        {{cont}}
+    </div>
+{% endblock content %}

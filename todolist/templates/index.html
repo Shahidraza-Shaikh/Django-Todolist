@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+   <title>Welocome to Taskmate!</title>
+{% endblock title %}
+   <title>Welocome to Taskmate!</title>
+
+{% block content %}
+    <div class="container"> <!-- This is alert for login from here to -->
+        <br>
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+            {{message}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endfor %}
+        {% endif %}
+        <!-- To here login messages-->
+
+        <div class="row mt-5" >
+            <div class="col-md-4 text-center">
+                <img style="margin: 20px 0;" src=" {% static 'images/note1.jpg' %}" class="rounded-lg shadow-lg " alt=" Note" width="350" height="280">
+            </div>
+            <div class="col-md-4 text-center">
+                 <img style="margin: 20px 0;" src=" {% static 'images/note2.jpg' %}" class="rounded-lg shadow-lg " alt=" Note" width="350" height="280">
+
+            </div>
+
+            <div class="col-md-4 text-center">
+                 <img style="margin: 20px 0;" src=" {% static 'images/note3.jpg' %}" class="rounded-lg shadow-lg " alt=" Note" width="350" height="280">  
+
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-10 offset-md-1">
+                <center><p class="h1 text-primary">Promotes active learning. By taking effective notes </p></center>
+                <center><p class="h3 mt-3">Teaches prioritizing skills. Often overlooked in its importance</p></center>
+                <center><p class="h4">Improves focus and attention to detail.</p></center>
+                <center><a href="{% url 'todolist'%}"><button type="button" class="btn btn-primary btn-lg mt-3 shadow-lg">Let's Started</button></a></center>
+                {% comment %} <a href="{% url 'login'%}"><button type="button" class="btn btn-primary btn-lg mt-3 shadow-lg">login</button></a> {% endcomment %}
+
+            </div>
+        </div>
+    </div>
+{% endblock content %}

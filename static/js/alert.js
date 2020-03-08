@@ -1,0 +1,1 @@
+edit=alert("Now You are on Edit page");
